@@ -5,6 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cantarell:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- https://lh3.googleusercontent.com/3yesBafcz7mdIl7DOsj3XX2o5EKyF1QLonNOVHtwbdQnAC-349qSznvANPUKYMaxfyI -->
@@ -13,24 +19,29 @@
     <!-- <a href='https://www.freepik.es/vectores/halloween'>Vector de halloween creado por freepik - www.freepik.es</a> -->
     <!-- <a href='https://www.freepik.es/vectores/halloween'>Vector de halloween creado por freepik - www.freepik.es</a> -->
     <div class="container">
-        <div class="title-bar">
+        <div class="title-bar absolute">
             <h1>JUEGO DEL AHORCADO</h1>
         </div>
 
-        <div class="score-table">
-            <h2>Aciertos</h2>
-            <p id="successResults">1</p>
-            <h2>Desaciertos</h2>
-            <p id="mistakeResults">1</p>
+        <div class="score-table absolute">
+            <div class="score-table-titles">
+                <h2>Aciertos</h2>
+                <h2>Desaciertos</h2>
+            </div>
+            <div class="score-table-results">
+                <p id="successResults">0</p>
+                <p id="mistakeResults">0</p>
+            </div>
         </div>
 
-        <div class="board">
-            <div class="gallow">
-                <div class="gallow-base"></div>
-                <div class="gallow-wood-1"></div>
-                <div class="gallow-wood-2"></div>
-                <div class="string"></div>
-            </div>
+        <div class="gallow absolute">
+            <div class="gallow-base absolute gallow-color"></div>
+            <div class="gallow-wood-1 absolute gallow-color"></div>
+            <div class="gallow-wood-2 absolute gallow-color"></div>
+            <div class="gallow-wood-3 absolute gallow-color"></div>
+            <div class="nail-1 absolute nail-circle"></div>
+            <div class="nail-2 absolute nail-circle"></div>
+            <div class="string absolute"></div>
         </div>
         <div class="word">
             <p>_ _ _ _</p>
@@ -66,5 +77,17 @@
             <button>Z</button>
         </div>
     </div>
+
+    <footer class="footer">
+        <div class="coded-by">
+            <p>Coded by <a href="https://twitter.com/_FAID__">FAID</a></p>
+        </div>
+        <div class="codepen">
+            <p>Code <a>here</a></p>
+        </div>
+        <div class="resources">
+            <p>Images from <a href="https://www.freepik.es/vector-gratis/coleccion-zombies-halloween-planos-dibujados-mano_18894505.htm#query=hand-drawn-flat-halloween-zombies-collection&position=12&from_view=search&track=sph">freepik</a></p>
+        </div>
+    </footer>
 </body>
 </html>
