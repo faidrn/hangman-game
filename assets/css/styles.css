@@ -74,7 +74,6 @@ h1{
     height: 54vh;
     top: 16vw;
     left: 6vw;
-    border: 1px solid red;
 }
 
 .gallow-color{
@@ -145,9 +144,8 @@ h1{
 .hangman{
     height: 36vh;
     width: 15vw;
-    top: 23vw;
-    left: 14vw;
-    border: 1px solid white;
+    top: 6.5vw;
+    left: 7.9vw;
 }
 
 .hangman-head{
@@ -204,6 +202,14 @@ h1{
 .hangman-right-leg img{
     width: 8vw;
     height: 8vw;
+}
+
+.word{
+    margin-top: -16vw;
+}
+
+.word p{
+    color: #FDFEFE;
 }
 
 
@@ -288,11 +294,12 @@ h1{
     }
 
     .gallow{
-        width: 60vw;
+        width: 30vw;
         height: 27vh;
-        top: 21vw;
+        top: 70vw;
+        /* top: 6vw; */
         position: relative;
-        left: 0;
+        /* left: 0; */
     }
 
     .gallow-base {
@@ -339,8 +346,69 @@ h1{
 
     .hangman {
         height: 19vh;
-        top: 40vw;
-        left: 28.4vw;
+        top: 7vw;
+        left: 8.3vw;
+    }
+
+    .hangman-head {
+        left: 5.2vw;
+    }
+
+    .hangman-head img {
+        width: 5vw;
+        height: 5vw;
+    }
+
+    .hangman-body {
+        top: 3.6vw;
+        left: 3.4vw;
+    }
+
+    .hangman-body img {
+        width: 8vw;
+        height: 8vw;
+    }
+
+    .hangman-right-arm {
+        top: 5vw;
+        left: 0.1vw;
+    }
+
+    .hangman-right-arm img {
+        width: 9vw;
+        height: 9vw;
+    }
+
+    .hangman-left-arm {
+        top: 3.6vw;
+        left: 7.5vw;
+    }
+
+    .hangman-left-arm img {
+        width: 8vw;
+        height: 8vw;
+    }
+
+    .hangman-right-leg {
+        top: 11.5vw;
+        left: 0.6vw;
+    }
+
+    .hangman-left-leg {
+        top: 11.5vw;
+        left: 5.4vw;
+    }
+
+    .hangman-left-leg img, 
+    .hangman-right-leg img {
+        width: 9vw;
+        height: 9vw;
+    }
+
+    .word{
+        position: relative;
+        top: -28vw;
+        font-size: 4vw;
     }
 
     .footer{
@@ -373,7 +441,7 @@ h1{
     }
 
     .gallow{
-        width: 80vw;
+        width: 33vw;
         height: 20vh;
         top: 0vw;
     }
@@ -424,6 +492,66 @@ h1{
         height: 14vw;
     }
 
+    .hangman {
+        height: 13vh;
+        top: 11vw;
+        left: 13.7vw;
+    }
+
+    .hangman-head {
+        left: 4.8vw;
+    }
+
+    .hangman-head img {
+        width: 6vw;
+        height: 6vw;
+    }
+
+    .hangman-body {
+        top: 4.5vw;
+        left: 3vw;
+    }
+
+    .hangman-body img {
+        width: 9vw;
+        height: 9vw;
+    }
+
+    .hangman-right-arm {
+        top: 6vw;
+        left: -0.9vw;
+    }
+
+    .hangman-right-arm img {
+        width: 10vw;
+        height: 10vw;
+    }
+
+    .hangman-left-arm {
+        top: 4.4vw;
+        left: 7.6vw;
+    }
+
+    .hangman-left-arm img {
+        width: 9vw;
+        height: 9vw;
+    }
+
+    .hangman-right-leg {
+        top: 13.5vw;
+        left: 0vw;
+    }
+
+    .hangman-left-leg {
+        top: 13.5vw;
+        left: 5.3vw;
+    }
+
+    .hangman-left-leg img, .hangman-right-leg img {
+        width: 10vw;
+        height: 10vw;
+    }
+
     .footer{
         margin-top: -9vw;
         font-size: 4vw;
@@ -432,4 +560,72 @@ h1{
 
 @media screen and (max-width: 280px) {
 	/* galaxy fold 280x653 87% */
+
+    .score-table{
+        top: 10vw;
+    }
+
+    .gallow{
+        top: -40vw;
+    }
+
+    .hangman {
+        top: 10vw;
+        left: 13.3vw;
+    }
+
+    .hangman-head {
+        left: 4.3vw;
+    }
+
+    .hangman-head img {
+        width: 7vw;
+        height: 7vw;
+    }
+
+    .hangman-body {
+        top: 5.3vw;
+        left: 2.7vw;
+    }
+
+    .hangman-body img {
+        width: 10vw;
+        height: 10vw;
+    }
+
+    .hangman-right-arm {
+        top: 7vw;
+        left: -1.5vw;
+    }
+
+    .hangman-right-arm img {
+        width: 11vw;
+        height: 11vw;
+    }
+
+    .hangman-left-arm {
+        top: 5.3vw;
+        left: 8.2vw;
+    }
+
+    .hangman-left-arm img {
+        width: 10vw;
+        height: 10vw;
+    }
+
+    .hangman-right-leg {
+        top: 15.2vw;
+        left: -0.2vw;
+    }
+
+    .hangman-left-leg {
+        top: 15.3vw;
+        left: 5.4vw;
+    }
+
+    .hangman-left-leg img, 
+    .hangman-right-leg img {
+        width: 11vw;
+        height: 11vw;
+    }
 }
