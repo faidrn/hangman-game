@@ -70,7 +70,7 @@ h1{
 }
 
 .gallow{
-    width: 30vw;
+    width: 23vw;
     height: 54vh;
     top: 16vw;
     left: 6vw;
@@ -96,18 +96,10 @@ h1{
 }
 
 .gallow-wood-2{
-    width: 13vw;
+    width: 15vw;
     height: 2vw;
-    left: 4vw;
-    top: 0vw;
-}
-
-.gallow-wood-3{
-    width: 10vw;
-    height: 2vw;
-    top: 2.5vw;
     left: 2vw;
-    transform: rotate(-30deg);
+    top: 0vw;
 }
 
 .nail-circle{
@@ -119,13 +111,99 @@ h1{
 }
 
 .nail-1{
+    left: 2.7vw;
+    top: 0.7vw;
+}
+
+.gallow-wood-3{
+    width: 10vw;
+    height: 2vw;
+    top: 2.5vw;
+    left: 2vw;
+    transform: rotate(-30deg);
+}
+
+.nail-2{
     left: 10vw;
     top: 1vw;
 }
 
-.nail-2{
+.nail-3{
     left: 3vw;
     top: 5vw;
+}
+
+.string{
+    left: 14vw;
+    top: 2vw;
+}
+
+.string img{
+    height: 8vw;
+}
+
+.hangman{
+    height: 36vh;
+    width: 15vw;
+    top: 23vw;
+    left: 14vw;
+    border: 1px solid white;
+}
+
+.hangman-head{
+    top: 0vw;
+    left: 5.5vw;
+}
+
+.hangman-head img{
+    width: 4vw;
+    height: 4vw;
+}
+
+.hangman-body{
+    top: 2.6vw;
+    left: 3.8vw;
+}
+
+.hangman-body img{
+    width: 7vw;
+    height: 7vw;
+}
+
+.hangman-right-arm{
+    top: 4vw;
+    left: 0.8vw;
+}
+
+.hangman-right-arm img{
+    width: 8vw;
+    height: 8vw;
+}
+
+.hangman-left-arm{
+    top: 2.7vw;
+    left: 7.4vw;
+}
+
+.hangman-left-arm img{
+    width: 7vw;
+    height: 7vw;
+}
+
+.hangman-right-leg{
+    top: 9.6vw;
+    left: 1.4vw;
+}
+
+.hangman-left-leg{
+    top: 9.6vw;
+    left: 5.6vw;
+}
+
+.hangman-left-leg img, 
+.hangman-right-leg img{
+    width: 8vw;
+    height: 8vw;
 }
 
 
@@ -211,10 +289,58 @@ h1{
 
     .gallow{
         width: 60vw;
-        height: 40vh;
-        top: 25vw;
+        height: 27vh;
+        top: 21vw;
         position: relative;
         left: 0;
+    }
+
+    .gallow-base {
+        width: 8vw;
+        height: 2vh;
+    }
+
+    .gallow-wood-1 {
+        height: 25vh;
+        bottom: 2vh;
+        left: 3vw;
+    }
+
+    .gallow-wood-2 {
+        width: 14vw;
+        left: 3vw;
+    }
+
+    .nail-1 {
+        left: 3.7vw;
+    }
+
+    .gallow-wood-3 {
+        top: 3vw;
+        left: 3vw;
+    }
+
+    .nail-2 {
+        left: 11vw;
+    }
+
+    .nail-3 {
+        left: 4vw;
+        top: 6vw;
+    }
+
+    .string {
+        left: 14.5vw;
+    }
+
+    .string img {
+        height: 9vw;
+    }
+
+    .hangman {
+        height: 19vh;
+        top: 40vw;
+        left: 28.4vw;
     }
 
     .footer{
@@ -248,8 +374,54 @@ h1{
 
     .gallow{
         width: 80vw;
-        height: 40vh;
-        top: 10vw;
+        height: 20vh;
+        top: 0vw;
+    }
+
+    .gallow-base {
+        width: 10vw;
+        height: 1.5vh;
+    }
+
+    .gallow-wood-1 {
+        height: 18.5vh;
+        bottom: 1.5vh;
+        width: 3vw;
+    }
+
+    .gallow-wood-2 {
+        width: 20vw;
+        height: 3vw;
+    }
+
+    .gallow-wood-3 {
+        width: 16vw;
+        height: 3vw;
+        top: 5vw;
+        transform: rotate(-42deg);
+    }
+
+    .nail-circle {
+        width: 1vw;
+        height: 1vw;
+    }
+
+    .nail-2 {
+        left: 15vw;
+        top: 1.5vw;
+    }
+
+    .nail-3 {
+        left: 4.6vw;
+        top: 10.6vw;
+    }
+
+    .string {
+        left: 19vw;
+    }
+
+    .string img {
+        height: 14vw;
     }
 
     .footer{
