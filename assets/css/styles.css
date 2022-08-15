@@ -1,5 +1,7 @@
 :root{
     --background-color: rgba(83, 48, 141, 255); /* #53308dff */
+    --title-color: Coral;
+    --title-shadow-color: DarkRed;
 }
 
 *{
@@ -45,8 +47,8 @@
 h1{
     font-family: 'Silkscreen', cursive;
     font-size: 5vw;
-    color: Coral;
-    text-shadow: 2px 2px 2px DarkRed;
+    color: var(--title-color);
+    text-shadow: 2px 2px 2px var(--title-shadow-color);
 }
 
 .score-table{
@@ -250,6 +252,12 @@ h1{
     background-color: #A6ACAF;
 }
 
+.alphabet{
+    width: 30vw;
+    left: 1vw;
+    top: -5vw;
+}
+
 
 .footer{
     height: 5vh;
@@ -259,6 +267,13 @@ h1{
     justify-content: space-around;
     align-items: center;
     text-shadow: 2px 2px 2px white;
+}
+
+.footer div p a{
+    text-decoration: none;
+    color: var(--title-color);
+    text-shadow: 2px 2px 2px var(--title-shadow-color);
+
 }
 /* @media (max-width: 640px) {
     /* El media query se ejecuta desde 0px HASTA 640px */
@@ -463,12 +478,12 @@ h1{
     }
 
     .word{
-        top: 12vw;
+        top: 15vw;
         font-size: 4vw;
     }
 
     .change-word {
-        top: -3vw;
+        top: 3vw;
         position: relative;
         right: 0vw;
     }
@@ -476,6 +491,15 @@ h1{
     .button{
         font-size: 3vw;
         padding: 11px 18px;
+    }
+
+    .btn-alphabet{
+        margin: 5px;
+    }
+
+    .alphabet {
+        width: 60vw;
+        top: -8vw;
     }
 
     .footer{
@@ -620,18 +644,27 @@ h1{
     }
 
     .word{
-        top: 10vw;
+        top: 16vw;
         font-size: 6vw;
     }
 
     .change-word {
-        top: -7vw;
+        top: 2vw;
         position: relative;
     }
 
     .button{
         font-size: 5vw;
         padding: 13px 20px;
+    }
+
+    .alphabet {
+        width: 78vw;
+        top: -10vw;
+    }
+
+    .btn-alphabet {
+        margin: 6px 7px;
     }
 
     .footer{
@@ -716,16 +749,25 @@ h1{
         height: 11vw;
     }
 
-    .word{
+    /* .word{
         top: 15vw;
-    }
+    } */
 
     .change-word{
-        top: 0vw;
+        top: 4vw;
         position: relative;
     }
 
     .button{
         padding: 5px 12px;
+    }
+
+    .alphabet{
+        top: -7vw;
+    }
+
+    .btn-alphabet {
+        margin: 3px;
+        border-radius: 10px;
     }
 }
