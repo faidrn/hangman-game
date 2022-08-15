@@ -19,6 +19,9 @@
     <!-- <a href='https://www.freepik.es/vectores/halloween'>Vector de halloween creado por freepik - www.freepik.es</a> -->
     <!-- <a href='https://www.freepik.es/vectores/halloween'>Vector de halloween creado por freepik - www.freepik.es</a> -->
     <div class="container">
+        <div class="image-bg inactive absolute">
+            <img src="./assets/images/bgImage.svg" alt="Background image">
+        </div>
         <div class="title-bar absolute">
             <h1>JUEGO DEL AHORCADO</h1>
         </div>
@@ -69,41 +72,41 @@
             </div>
         </div>
         
-        <div class="word">
+        <div class="word relative">
             <!-- <p>_ _ _ _ _ _ _ _ _ _ _ _ _</p> -->
             <p>PALABROTA</p>
         </div>
-        <div class="new-word">
-            <button>Nueva palabra</button>
+        <div class="change-word absolute">
+            <button id="get-new-word" class="button btn-new-word">Nueva palabra</button>
         </div>
         <div class="alphabet">
-            <button>A</button>
-            <button>B</button>
-            <button>C</button>
-            <button>D</button>
-            <button>E</button>
-            <button>F</button>
-            <button>G</button>
-            <button>H</button>
-            <button>I</button>
-            <button>J</button>
-            <button>K</button>
-            <button>L</button>
-            <button>M</button>
-            <button>N</button>
-            <button>Ñ</button>
-            <button>O</button>
-            <button>P</button>
-            <button>Q</button>
-            <button>R</button>
-            <button>S</button>
-            <button>T</button>
-            <button>U</button>
-            <button>V</button>
-            <button>W</button>
-            <button>X</button>
-            <button>Y</button>
-            <button>Z</button>
+            <!-- <button class="button btn-alphabet">A</button>
+            <button class="button btn-alphabet">B</button>
+            <button class="button btn-alphabet">C</button>
+            <button class="button btn-alphabet">D</button>
+            <button class="button btn-alphabet">E</button>
+            <button class="button btn-alphabet">F</button>
+            <button class="button btn-alphabet">G</button>
+            <button class="button btn-alphabet">H</button>
+            <button class="button btn-alphabet">I</button>
+            <button class="button btn-alphabet">J</button>
+            <button class="button btn-alphabet">K</button>
+            <button class="button btn-alphabet">L</button>
+            <button class="button btn-alphabet">M</button>
+            <button class="button btn-alphabet">N</button>
+            <button class="button btn-alphabet">Ñ</button>
+            <button class="button btn-alphabet">O</button>
+            <button class="button btn-alphabet">P</button>
+            <button class="button btn-alphabet">Q</button>
+            <button class="button btn-alphabet">R</button>
+            <button class="button btn-alphabet">S</button>
+            <button class="button btn-alphabet">T</button>
+            <button class="button btn-alphabet">U</button>
+            <button class="button btn-alphabet">V</button>
+            <button class="button btn-alphabet">W</button>
+            <button class="button btn-alphabet">X</button>
+            <button class="button btn-alphabet">Y</button>
+            <button class="button btn-alphabet">Z</button> -->
         </div>
     </div>
 
@@ -118,5 +121,7 @@
             <p>Images from <a href="https://www.freepik.es/vector-gratis/coleccion-zombies-halloween-planos-dibujados-mano_18894505.htm#query=hand-drawn-flat-halloween-zombies-collection&position=12&from_view=search&track=sph">freepik</a></p>
         </div>
     </footer>
+
+    <script src="./assets/js/alphabet.js"></script>
 </body>
 </html>

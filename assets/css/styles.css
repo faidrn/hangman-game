@@ -1,14 +1,24 @@
-:root{}
+:root{
+    --background-color: rgba(83, 48, 141, 255); /* #53308dff */
+}
 
 *{
     margin: 0;
     padding: 0;
 }
 
+.inactive{
+    display: none;
+}
+
 /* POSITIONS */
 
 .absolute{
     position: absolute;
+}
+
+.relative{
+    position: relative;
 }
 
 /* MAIN STRUCTURE */
@@ -205,11 +215,39 @@ h1{
 }
 
 .word{
-    margin-top: -16vw;
+    top: 6vw;
 }
 
 .word p{
     color: #FDFEFE;
+}
+
+.change-word{
+    top: 17vw;
+    right: 6vw;
+}
+
+.button {
+    border-radius: 12px;
+    border: none;
+    padding: 6px 13px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.btn-new-word {
+    background-color: #D0D3D4;
+    border: 2px solid #e7e7e7;
+}
+
+.btn-new-word:hover {
+    background-color: #A6ACAF;
 }
 
 
@@ -260,6 +298,25 @@ h1{
 @media screen and (max-width: 1024px) {
 	/* iPad pro 1024x1366 41% */
 
+    .container{
+        background: var(--background-color);
+    }
+
+    .inactive{
+        display: inline-block;
+    }
+
+    .image-bg{
+        width: 100%;
+        height: 55vh;
+    }
+
+    .image-bg img{
+        width: 100%;
+        height: 55vh;
+        object-fit: cover;
+    }
+
     .title-bar{
         top: 5vw;
     }
@@ -296,7 +353,7 @@ h1{
     .gallow{
         width: 30vw;
         height: 27vh;
-        top: 70vw;
+        top: 20vw;
         /* top: 6vw; */
         position: relative;
         /* left: 0; */
@@ -406,9 +463,19 @@ h1{
     }
 
     .word{
-        position: relative;
-        top: -28vw;
+        top: 12vw;
         font-size: 4vw;
+    }
+
+    .change-word {
+        top: -3vw;
+        position: relative;
+        right: 0vw;
+    }
+
+    .button{
+        font-size: 3vw;
+        padding: 11px 18px;
     }
 
     .footer{
@@ -431,7 +498,7 @@ h1{
 
     .score-table{
         width: 80%;
-        top: 25vw;
+        top: 26vw;
         font-size: 4vw;
         position: relative;
     }
@@ -443,7 +510,7 @@ h1{
     .gallow{
         width: 33vw;
         height: 20vh;
-        top: 0vw;
+        top: 14vw;
     }
 
     .gallow-base {
@@ -552,6 +619,21 @@ h1{
         height: 10vw;
     }
 
+    .word{
+        top: 10vw;
+        font-size: 6vw;
+    }
+
+    .change-word {
+        top: -7vw;
+        position: relative;
+    }
+
+    .button{
+        font-size: 5vw;
+        padding: 13px 20px;
+    }
+
     .footer{
         margin-top: -9vw;
         font-size: 4vw;
@@ -561,12 +643,17 @@ h1{
 @media screen and (max-width: 280px) {
 	/* galaxy fold 280x653 87% */
 
+    .image-bg, 
+    .image-bg img{
+        height: 50vh;
+    }
+
     .score-table{
-        top: 10vw;
+        top: 31vw;
     }
 
     .gallow{
-        top: -40vw;
+        top: 21vw;
     }
 
     .hangman {
@@ -627,5 +714,18 @@ h1{
     .hangman-right-leg img {
         width: 11vw;
         height: 11vw;
+    }
+
+    .word{
+        top: 15vw;
+    }
+
+    .change-word{
+        top: 0vw;
+        position: relative;
+    }
+
+    .button{
+        padding: 5px 12px;
     }
 }
