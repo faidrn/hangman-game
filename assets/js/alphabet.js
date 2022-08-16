@@ -7,6 +7,8 @@ function renderAlphabet(arr){
     for (letter of arr){
         // Crear botones
         const btnLetter = document.createElement('button');
+        // Asignar id
+        btnLetter.setAttribute('id', letter);
         // Asignar clases
         btnLetter.classList.add('button', 'btn-alphabet');
         //  Asignar value
