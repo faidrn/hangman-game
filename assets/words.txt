@@ -77,7 +77,6 @@ Orbitar
 Amenazar
 Ataca
 Alpinista
-Alpinista
 Pintor
 Abrelatas
 Gracias
