@@ -9,7 +9,8 @@
     padding: 0;
 }
 
-.inactive{
+.inactive, 
+.hide{
     display: none;
 }
 
