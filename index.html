@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="stylesheet" href="./assets/css/animate.css">
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -50,23 +51,23 @@
             </div>
 
             <div class="hangman absolute">
-                <div class="hangman-left-arm absolute hide">
+                <div class="hangman-left-arm absolute hide-hangman-parts">
                     <img src="./assets/images/left-arm.svg" alt="Hangman left arm">
                 </div>
-                <div class="hangman-body absolute hide">
+                <div class="hangman-body absolute hide-hangman-parts">
                     <img src="./assets/images/body.svg" alt="Hangman body">
                 </div>
-                <div class="hangman-head absolute hide">
+                <div class="hangman-head absolute hide-hangman-parts">
                     <img src="./assets/images/head.svg" alt="Hagman head">
                 </div>
-                <div class="hangman-right-arm absolute hide">
+                <div class="hangman-right-arm absolute hide-hangman-parts">
                     <img src="./assets/images/right-arm.svg" alt="Hangman right arm">
                 </div>
                 
-                <div class="hangman-right-leg absolute hide">
+                <div class="hangman-right-leg absolute hide-hangman-parts">
                     <img src="./assets/images/right-leg.svg" alt="Hangman right leg">
                 </div>
-                <div class="hangman-left-leg absolute hide">
+                <div class="hangman-left-leg absolute hide-hangman-parts">
                     <img src="./assets/images/left-leg.svg" alt="Hangman left leg">
                 </div>
             </div>
@@ -78,6 +79,14 @@
         </div>
         <div class="change-word absolute">
             <button id="get-new-word" class="button btn-new-word">Nueva palabra</button>
+        </div>
+        <div class="alerts absolute">
+            <div class="alert-success alert hide-success-alert">
+                <strong>¡Felicidades!</strong> Has adivinado la palabra
+            </div>
+            <div class="alert-danger alert hide-danger-alert">
+                <strong>¡Mala suerte!</strong> No has adivinado la palabra
+            </div>
         </div>
         <div class="alphabet relative">
         </div>

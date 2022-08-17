@@ -2,12 +2,7 @@
 const printWord = document.getElementById('printWord');
 const getNewWord = document.getElementById('get-new-word');
 const letterAlphabet = document.querySelectorAll('.btn-alphabet');
-const hangmanHead = document.querySelector('.hangman-head');
-const hangmanBody = document.querySelector('.hangman-body');
-const hangmanLeftArm = document.querySelector('.hangman-left-arm');
-const hangmanRightArm = document.querySelector('.hangman-right-arm');
-const hangmanRightLeg = document.querySelector('.hangman-right-leg');
-const hangmanLeftLeg = document.querySelector('.hangman-left-leg');
+const hangmanParts = document.querySelectorAll('.hide-hangman-parts');
 
 
 class ReadFile{
@@ -42,12 +37,11 @@ class LogicGame{
     constructor(listOfWords){
         this.listOfWords = listOfWords;
         this.word;
-        this.head = 0;
-        this.body = 0;
-        this.leftArm = 0;
-        this.rightArm = 0;
-        this.leftLeg = 0;
-        this.rightLeg = 0;
+        // Contador q lleva la posicion del array de las partes del cuerpo
+        this.hangmanPartsOfBody = 0;
+        // Array con la ubicacion HTML de las partes del cuerpo
+        this.partsOfBodyArray = [2, 1, 3, 0, 4, 5];
+        this.auxScore = 0;
     }
 
     getRandomPosition(){
@@ -82,17 +76,19 @@ class LogicGame{
         // Convirtiendo la cadena en array
         let underlinesArray = printWord.innerHTML.split(' ');
         let aux = 0;
-        
+
         // Ubicar la letra en el espacio que corresponde
         for(var i = 0; i < this.word.length; i++){
             if (this.word[i] == letter){
-                underlinesArray[i] = letter;
-                aux -= 1;
+                if (underlinesArray[i] == '_'){
+                    underlinesArray[i] = letter;
+                    aux -= 1;
+                }
             } else{
                 aux += 1;
             }
         }
-        
+        console.log(aux, this.word.length);
         if (aux == this.word.length){
             this.drawingHangman();
         }
@@ -107,46 +103,11 @@ class LogicGame{
 
     // Metodo para mostrar el ahorcado
     drawingHangman(){
-        if (this.head == 0){
-            this.head = 1;
-            hangmanHead.classList.remove('hide');
-        }
-
-        if (this.head == 1){
-            if (this.body == 0){
-                this.body = 1;
-                hangmanBody.classList.remove('hide');
-            }
-
-            if (this.body == 1){
-                if (this.rightArm == 0){
-                    this.rightArm = 1;
-                    hangmanRightArm.classList.remove('hide');
-                }
-
-                if (this.rightArm == 1){
-                    if (this.leftArm == 0){
-                        this.leftArm = 1;
-                        hangmanLeftArm.classList.remove('hide');
-                    }
-
-                    if (this.leftArm == 1){
-                        if (this.rightLeg == 0){
-                            this.rightLeg = 1;
-                            hangmanRightLeg.classList.remove('hide');
-                        }
-
-                        if (this.rightLeg == 1){
-                            if (this.leftLeg == 0){
-                                this.leftLeg = 1;
-                                hangmanLeftLeg.classList.remove('hide');
-                            }
-                        }
-                    }
-                }
-            }
-        }
+        hangmanParts[this.partsOfBodyArray[this.hangmanPartsOfBody]].classList.remove('hide-hangman-parts');
+        this.hangmanPartsOfBody += 1;
     }
+
+
 }
 
 

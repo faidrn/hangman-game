@@ -10,7 +10,9 @@
 }
 
 .inactive, 
-.hide{
+.hide-hangman-parts, 
+.hide-success-alert, 
+.hide-danger-alert{
     display: none;
 }
 
@@ -230,6 +232,43 @@ h1{
     right: 6vw;
 }
 
+/* ALERTAS */
+.alerts{
+	/* width: 35vw; */
+	display: flex;
+    flex-direction: column;
+	/* align-items: center; */
+	/* justify-content: center; */
+	/* margin-top: 2vw; */
+	/* height: 10vw; */
+    top: 21vw;
+    left: 36vw;
+}
+
+.alert{
+	padding: 15px 25px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	font-size: 1.3vw;
+	/*transition: all .5s ease; /*animmacion de abrir y cerrar*/
+    animation: rubberBand; /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 2s; /* don't forget to set a duration! */
+}
+
+.alert-success{
+	color: #155724;
+  	background-color: #d4edda;
+  	border-color: #c3e6cb;
+    /* text-shadow: 2px 2px 2px white; */
+}
+
+.alert-danger {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+
+/* BOTONES */
 .button {
     border-radius: 12px;
     border: none;
@@ -259,7 +298,7 @@ h1{
     top: -5vw;
 }
 
-
+/* PIE DE PAGINA */
 .footer{
     height: 5vh;
     margin-top: -2.5vw;
@@ -466,6 +505,17 @@ h1{
         right: 0vw;
     }
 
+    /* ALERTAS */
+    .alerts{
+        top: 55vw;
+        left: 21vw;
+    }
+
+    .alert{
+        font-size: 3vw;
+    }
+
+    /* BOTONES */
     .button{
         font-size: 3vw;
         padding: 11px 18px;
@@ -480,6 +530,7 @@ h1{
         top: -8vw;
     }
 
+    /* PIE DE PAGINA */
     .footer{
         height: 4vh;
         margin-top: -5.7vw;
@@ -631,6 +682,18 @@ h1{
         position: relative;
     }
 
+    /* ALERTAS */
+    .alerts{
+        top: 100vw;
+        left: 2.5vw;
+    }
+
+    .alert{
+        font-size: 5vw;
+        padding: 15px;
+    }
+
+    /* BOTONES */
     .button{
         font-size: 5vw;
         padding: 13px 20px;
@@ -645,6 +708,7 @@ h1{
         margin: 6px 7px;
     }
 
+    /* PIE DE PAGINA */
     .footer{
         margin-top: -9vw;
         font-size: 4vw;
@@ -727,15 +791,21 @@ h1{
         height: 11vw;
     }
 
-    /* .word{
-        top: 15vw;
-    } */
-
     .change-word{
         top: 4vw;
         position: relative;
     }
 
+    /* ALERTAS */
+    .alerts{
+        left: 2vw;
+    }
+
+    .alert{
+        padding: 7px;
+    }
+
+    /* BOTONES */
     .button{
         padding: 5px 12px;
     }
