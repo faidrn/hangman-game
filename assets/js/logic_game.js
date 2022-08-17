@@ -1,61 +1,127 @@
 // Obtenr elementos HTML
 const printWord = document.getElementById('printWord');
 const getNewWord = document.getElementById('get-new-word');
+const letterAlphabet = document.querySelectorAll('.btn-alphabet');
+
+
+class ReadFile{
+    constructor(filePath){
+        this.filePath = filePath
+    }
+
+    readFile(){
+        let arr = new Array();
+
+        var file = new XMLHttpRequest();
+        file.open("GET", this.filePath, false);
+        file.onreadystatechange = function (){
+            if(file.readyState === 4){
+                if(file.status === 200 || file.status == 0){
+                    var text = file.responseText.split('\n');
+                    for(var i = 0; i < text.length; i++){
+                        arr.push(text[i]);
+                    }
+                    // console.log(arr[0]);
+                    // return arr;
+                }
+            }
+        }
+        file.send(null);
+        return arr;
+    }
+}
+
+    // clase q contiene toda la logica del juego
+class LogicGame{
+    constructor(listOfWords){
+        this.listOfWords = listOfWords;
+        this.word;
+        // this.underlines;
+    }
+
+    getRandomPosition(){
+        // Generar posicion aleatoria
+        let max = this.listOfWords.length;
+        let randomPosition = Math.floor(Math.random() * max);
+
+        return randomPosition;
+    }
+
+    // Metodo para obtener una palabra del array de forma aleatoria
+    getWord(){
+        let randomWord = this.listOfWords[this.getRandomPosition()];
+        randomWord = randomWord.toUpperCase();
+        this.word = randomWord;
+    
+        return randomWord;
+    }
+
+    // Metodo para generar la cadena de underlines (_) para imprimir en pantalla
+    turnWordInUnderlines(){
+        const reg = /[A-Z]/g;
+        let selectedWord = this.getWord();
+        let underlines = selectedWord.replace(reg, "_ ");
+
+        return underlines;
+    }
+
+    compareLetters(letter){
+        // Asignar el valor actual de la cadena, para no perder las letras q se han identificado
+        // Convirtiendo la cadena en array
+        let underlinesArray = printWord.innerHTML.split(' ');
+        
+        // Ubicar la letra en el espacio que corresponde
+        for(var i = 0; i < this.word.length; i++){
+            if (this.word[i] == letter){
+                underlinesArray[i] = letter;
+            } 
+        }
+        
+        // Convertir el array en string
+        underlinesArray = underlinesArray.toString();
+        // Eliminar las comas del string
+        underlinesArray = underlinesArray.replace(/,/g, " ");
+
+        return underlinesArray;
+    }
+}
 
 
 // Leer archivo txt
 let arrayWords = new Array();
-let filePath = "./assets/words.txt";
+// let filePath = "./assets/words.txt";
+let path = "./assets/words.txt";
 
-function readFile(){
-    var file = new XMLHttpRequest();
-    file.open("GET", filePath, false);
-    file.onreadystatechange = function (){
-        if(file.readyState === 4){
-            if(file.status === 200 || file.status == 0){
-                var text = file.responseText.split('\n');
-                for(var i = 0; i < text.length; i++){
-                    arrayWords.push(text[i]);
-                }
-                // console.log(arr[0]);
-                // return text;
-            }
-        }
-    }
-    file.send(null);
-
-}
+// instanciamos la clase q lee el archivo
+const txtFile = new ReadFile(path);
+arrayWords = txtFile.readFile();
 
 
-readFile();
-// console.log(arrayWords)
+// Instanciamos la clase que ejecutara la logica del juego
+const logicGame = new LogicGame(arrayWords);
 
-// Obtener una palabra del array de forma aleatoria
-var word;
 
-getNewWord.addEventListener('click', function(){
-    // Generar posicion aleatoria
-    let max = arrayWords.length;
-    let randomPosition = Math.floor(Math.random() * max);
 
+getNewWord.addEventListener('click', function(event){
     // Obtener palabra
-    word = arrayWords[randomPosition];
-    word = word.toUpperCase();
-
-    // Generar la cadena de underlines (_) para imprimir en pantalla
-    const reg = /[A-Z]/g;
-    let underlines = word.replace(reg, "_ ");
+    let underlines = logicGame.turnWordInUnderlines();
+    console.log(logicGame.word, 'no class');
 
     // Imprimir la cadena convertida a underlines
     printWord.innerText = underlines;
-
 });
 
 
+letterAlphabet.forEach((everyLetter, i) => {
+	//asignando un CLICK a cada boton
+	letterAlphabet[i].addEventListener('click', () => {
+		printWord.innerText = logicGame.compareLetters(letterAlphabet[i].id);
+	})
+});
 
 
 // Comparar la letra seleccionada con las letras de la palabra
-console.log(word);
+console.log(logicGame.word);
 
 
 // read file using promises and asyn
