@@ -3,6 +3,8 @@ const printWord = document.getElementById('printWord');
 const getNewWord = document.getElementById('get-new-word');
 const letterAlphabet = document.querySelectorAll('.btn-alphabet');
 const hangmanParts = document.querySelectorAll('.hide-hangman-parts');
+const successResults = document.getElementById('successResults');
+const mistakeResults = document.getElementById('mistakeResults');
 
 
 class ReadFile{
@@ -37,11 +39,16 @@ class LogicGame{
     constructor(listOfWords){
         this.listOfWords = listOfWords;
         this.word;
+        this.lengthWord = 0;
+        this.counter = 0;
         // Contador q lleva la posicion del array de las partes del cuerpo
         this.hangmanPartsOfBody = 0;
         // Array con la ubicacion HTML de las partes del cuerpo
         this.partsOfBodyArray = [2, 1, 3, 0, 4, 5];
         this.auxScore = 0;
+        // Variables para llevar los puntos a favor y en contra
+        this.successScore = 0;
+        this.wrontScore = 0;
     }
 
     getRandomPosition(){
@@ -55,8 +62,10 @@ class LogicGame{
     // Metodo para obtener una palabra del array de forma aleatoria
     getWord(){
         let randomWord = this.listOfWords[this.getRandomPosition()];
+        // randomWord = 'armadillo'; //'Madre';
         randomWord = randomWord.toUpperCase();
         this.word = randomWord;
+        this.lengthWord = randomWord.length;
     
         return randomWord;
     }
@@ -73,24 +82,42 @@ class LogicGame{
     // Metodo para comparar la letra seleccionada con las letras de la palabra
     compareLetters(letter){
         // Asignar el valor actual de la cadena, para no perder las letras q se han identificado
-        // Convirtiendo la cadena en array
+            // Convirtiendo la cadena en array
         let underlinesArray = printWord.innerHTML.split(' ');
         let aux = 0;
 
-        // Ubicar la letra en el espacio que corresponde
-        for(var i = 0; i < this.word.length; i++){
-            if (this.word[i] == letter){
-                if (underlinesArray[i] == '_'){
-                    underlinesArray[i] = letter;
-                    aux -= 1;
+        console.log(this.counter, this.word.length);
+        if (this.counter < this.word.length){
+
+            // Ubicar la letra en el espacio que corresponde
+            for(var i = 0; i < this.word.length; i++){
+                if (this.word[i] == letter){
+                    if (underlinesArray[i] == '_'){
+                        underlinesArray[i] = letter;
+                        aux -= 1;
+                        this.auxScore -= 1;
+                        // Contador que controla el juego, para saber en q momento se ha terminado de seleccionar letras y mostrar el resultado
+                        this.counter += 1;
+                    }
+                } else{
+                    aux += 1;
                 }
-            } else{
-                aux += 1;
             }
+
+            if (aux == this.word.length){
+                this.drawingHangman();
+                this.counter += 1;
+            }
+
+            // Contador que controla el juego, para saber en q momento se ha terminado de seleccionar letras y mostrar el resultado
+            // this.counter += 1;
+            console.log(this.counter);
+
+
         }
-        console.log(aux, this.word.length);
-        if (aux == this.word.length){
-            this.drawingHangman();
+
+        if (this.word.length == this.counter){
+            this.getScore();
         }
 
         // Convertir el array en string
@@ -105,6 +132,25 @@ class LogicGame{
     drawingHangman(){
         hangmanParts[this.partsOfBodyArray[this.hangmanPartsOfBody]].classList.remove('hide-hangman-parts');
         this.hangmanPartsOfBody += 1;
+        this.auxScore += 1;
+    }
+
+    // Metodo para calcular el puntaje
+    getScore(){
+        console.log(this.auxScore);
+        if (this.auxScore > 0){
+            this.wrontScore += 1;
+            mistakeResults.innerText = this.wrontScore;
+        } else{
+            this.successScore += 1;
+            successResults.innerText = this.successScore;
+        }
+    }
+
+    // Metodo para reiniciar variables al dar click en el boton nueva palabra
+    resetVariables(){
+        this.counter = 0;
+        this.auxScore = 0;
     }
 
 
@@ -127,6 +173,9 @@ const logicGame = new LogicGame(arrayWords);
 
 
 getNewWord.addEventListener('click', function(event){
+    // Reiniciar variables
+    logicGame.resetVariables();
+    
     // Obtener palabra
     let underlines = logicGame.turnWordInUnderlines();
     console.log(logicGame.word, 'no class');
@@ -140,6 +189,9 @@ letterAlphabet.forEach((everyLetter, i) => {
 	//asignando un CLICK a cada boton
 	letterAlphabet[i].addEventListener('click', () => {
 		printWord.innerText = logicGame.compareLetters(letterAlphabet[i].id);
+        // if (logicGame.word.length - logicGame.counter == 1){
+        //     logicGame.getScore();
+        // }
 	})
 });
 
