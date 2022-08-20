@@ -1,13 +1,15 @@
 // Obtenr elementos HTML
 const printWord = document.getElementById('printWord');
-const getNewWord = document.getElementById('get-new-word');
-const letterAlphabet = document.querySelectorAll('.btn-alphabet');
+const btnGetNewWord = document.getElementById('get-new-word');
+const btnLetterAlphabet = document.querySelectorAll('.btn-alphabet');
 const hangmanParts = document.querySelectorAll('.hide-hangman-parts');
+// const hangmanParts = document.getElementsByName('hangman');
 const successResults = document.getElementById('successResults');
 const mistakeResults = document.getElementById('mistakeResults');
 const showWord = document.querySelector('.show-word');
 const alertDanger = document.querySelector('.alert-danger');
 const alertSuccess = document.querySelector('.alert-success');
+// https://www.youtube.com/watch?v=0kR_DuUuX0A&ab_channel=GermanRodriguez
 
 
 class ReadFile{
@@ -52,6 +54,12 @@ class LogicGame{
         // Variables para llevar los puntos a favor y en contra
         this.successScore = 0;
         this.wrontScore = 0;
+
+
+        // video
+        this.guessTheLetter = false;
+        this.numberOfBadAnswers = 0;  // Cuantas veces me equivoque
+        this.numberOfCorrectAnsewrs = 0;  // Cuantes veces acerté
     }
 
     getRandomPosition(){
@@ -72,9 +80,13 @@ class LogicGame{
         // this.counter = randomWord.length;
 
         // Quitar las clase de animacion a los mensajes y agregar las clases q los oculta
-        alertDanger.classList.add('hide-danger-alert');
+        if (!alertDanger.classList.contains('hide-danger-alert')){
+            alertDanger.classList.add('hide-danger-alert');
+        }
+        if (!alertSuccess.classList.contains('hide-success-alert')){
+            alertSuccess.classList.add('hide-success-alert');
+        }
         alertDanger.classList.remove('animation-alert');
-        alertSuccess.classList.add('hide-success-alert');
         alertSuccess.classList.remove('animation-alert');
     
         return randomWord;
@@ -96,26 +108,24 @@ class LogicGame{
         let underlinesArray = printWord.innerHTML.split(' ');
         let aux = 0;
 
-        let guessTheLetter = false;
-        let numberOfBadAnswers = 0;  // Cuantas veces me equivoque
-        let numberOfCorrectAnsewrs = 0;  // Cuantes veces acerté
-
+        console.log(this.guessTheLetter);
         console.log(this.counter, this.word.length);
         if (this.counter < this.word.length){
 
             // Ubicar la letra en el espacio que corresponde
             for(let i = 0; i < this.word.length; i++){
                 if (this.word[i] == letter){
-                    if (underlinesArray[i] == '_'){
+                    // if (underlinesArray[i] == '_'){
                         underlinesArray[i] = letter;
                         aux -= 1;
                         this.auxScore -= 1;
                         // Contador que controla el juego, para saber en q momento se ha terminado de seleccionar letras y mostrar el resultado
                         // this.counter += 1;
 
-                        guessTheLetter = true;
-                        numberOfCorrectAnsewrs += 1;
-                    }
+                        // video
+                        this.guessTheLetter = true;
+                        this.numberOfCorrectAnsewrs += 1;
+                    // }
                 } else{
                     aux += 1;
                 }
@@ -126,23 +136,31 @@ class LogicGame{
             //     this.counter += 1;
             // }
 
-            if (guessTheLetter == false){
-                numberOfBadAnswers += 1;
+            // video
+            if (this.guessTheLetter == false){
                 this.drawingHangman();
-
+                this.numberOfBadAnswers += 1;
             }
-
+            console.log(this.numberOfBadAnswers);
             // Mostrar mensaje de perdiste
-            if (numberOfBadAnswers == 5){
+            // 6 partes del cuerpo
+            if (this.numberOfBadAnswers == 6){
                 // Agregar la palabra al mensaje
                 showWord.innerText = this.word;
 
                 alertDanger.classList.remove('hide-danger-alert');
                 // Agregar animacion
                 alertDanger.classList.add('animation-alert');
+
+                // Finalizar juego
+                this.gameOver();
+
+                this.wrontScore += 1;
+                mistakeResults.innerText = this.wrontScore;
+
             } else{
                 // Mostrar el mensaje de ganaste
-                if (numberOfCorrectAnsewrs == this.word.length){
+                if (this.numberOfCorrectAnsewrs == this.word.length){
                     alertSuccess.classList.remove('hide-success-alert');
                     alertSuccess.classList.add('animation-alert');
                 }
@@ -150,14 +168,14 @@ class LogicGame{
 
             // Contador que controla el juego, para saber en q momento se ha terminado de seleccionar letras y mostrar el resultado
             // this.counter += 1;
-            console.log(this.counter);
+            // console.log(this.counter);
 
 
         }
 
-        if (this.word.length == this.counter){
-            this.getScore();
-        }
+        // if (this.word.length == this.counter){
+        //     this.getScore();
+        // }
 
         // Convertir el array en string
         underlinesArray = underlinesArray.toString();
@@ -192,6 +210,39 @@ class LogicGame{
         this.auxScore = 0;
     }
 
+    // Metodo para bloquear todos los controles cuando finalice el juego
+    gameOver(){
+        // Inactivar los botones del alfabeto
+        btnLetterAlphabet.forEach((everyLetter, i) => {
+            btnLetterAlphabet[i].disabled = true;
+        });
+
+        // Activar el boton para seleccionar una nueva palabra
+        btnGetNewWord.disabled = false;
+    }
+
+    gameStart(){
+        // Activar los botones del alfabeto
+        btnLetterAlphabet.forEach((everyLetter, i) => {
+            btnLetterAlphabet[i].disabled = false;
+        });
+
+        // Inactivar el boton para seleccionar una nueva palabra
+        btnGetNewWord.disabled = true;
+
+        // Ocultar el ahorcado
+        hangmanParts.forEach((everyHangmanPart, i) => {
+            if (!hangmanParts[i].classList.contains('hide-hangman-parts')){
+                hangmanParts[i].classList.add('hide-hangman-parts');
+            }
+        });
+
+        // Reset variables
+        this.hangmanPartsOfBody = 0;
+            // video
+        this.numberOfBadAnswers = 0;
+    }
+
 
 }
 
@@ -211,7 +262,7 @@ const logicGame = new LogicGame(arrayWords);
 
 
 
-getNewWord.addEventListener('click', function(event){
+btnGetNewWord.addEventListener('click', function(event){
     // Reiniciar variables
     logicGame.resetVariables();
     
@@ -222,25 +273,24 @@ getNewWord.addEventListener('click', function(event){
     // Imprimir la cadena convertida a underlines
     printWord.innerText = underlines;
 
-    // Activar los botones inactivos
-    letterAlphabet.forEach((everyLetter, i) => {
-        letterAlphabet[i].disabled = false;
-    });
+    // Iniciar juego
+    logicGame.gameStart();
 
 });
 
 
-letterAlphabet.forEach((everyLetter, i) => {
+btnLetterAlphabet.forEach((everyLetter, i) => {
 	//asignando un CLICK a cada boton
-	letterAlphabet[i].addEventListener('click', () => {
-		printWord.innerText = logicGame.compareLetters(letterAlphabet[i].id);
+	btnLetterAlphabet[i].addEventListener('click', () => {
+		printWord.innerText = logicGame.compareLetters(btnLetterAlphabet[i].id);
         // Inactivar boton para que no se vuelva a usar
-        letterAlphabet[i].disabled = true;
+        btnLetterAlphabet[i].disabled = true;
         // if (logicGame.word.length - logicGame.counter == 1){
         //     logicGame.getScore();
         // }
 	})
 });
+
 
 
 
