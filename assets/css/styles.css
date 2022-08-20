@@ -251,8 +251,6 @@ h1{
 	border-radius: 4px;
 	font-size: 1.3vw;
 	/*transition: all .5s ease; /*animmacion de abrir y cerrar*/
-    animation: rubberBand; /* referring directly to the animation's @keyframe declaration */
-    animation-duration: 2s; /* don't forget to set a duration! */
 }
 
 .alert-success{
@@ -266,6 +264,16 @@ h1{
   color: #721c24;
   background-color: #f8d7da;
   border-color: #f5c6cb;
+}
+
+.animation-alert{
+    animation: rubberBand; /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 2s; /* don't forget to set a duration! */
+}
+
+.show-word{
+    font-weight: bold;
+    text-shadow: 2px 2px 2px grey;
 }
 
 /* BOTONES */
