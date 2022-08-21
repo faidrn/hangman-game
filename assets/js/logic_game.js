@@ -27,8 +27,6 @@ class ReadFile{
                     for(var i = 0; i < text.length; i++){
                         arr.push(text[i]);
                     }
-                    // console.log(arr[0]);
-                    // return arr;
                 }
             }
         }

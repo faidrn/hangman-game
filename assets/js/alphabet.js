@@ -13,8 +13,6 @@ function renderAlphabet(arr){
         btnLetter.classList.add('button', 'btn-alphabet');
         //  Asignar value
         btnLetter.innerText = `${letter}`;
-        // Evento listener
-        //btnLetter.addEventListener('click', openProductDetailAside);
         // Agregar los botones dentro del div q los contendra
         alphabetContainer.appendChild(btnLetter);
     }
