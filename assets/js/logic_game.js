@@ -208,7 +208,7 @@ const logicGame = new LogicGame(arrayWords);
 
 btnGetNewWord.addEventListener('click', function(event){
     // Reiniciar variables
-    logicGame.resetVariables();
+    // logicGame.resetVariables();
     
     // Obtener palabra
     let underlines = logicGame.turnWordInUnderlines();

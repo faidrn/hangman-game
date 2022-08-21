@@ -204,12 +204,12 @@ h1{
 }
 
 .hangman-right-leg{
-    top: 9.6vw;
-    left: 1.4vw;
+    top: 9.5vw;
+    left: 1.35vw;
 }
 
 .hangman-left-leg{
-    top: 9.6vw;
+    top: 9.5vw;
     left: 5.6vw;
 }
 
@@ -325,15 +325,6 @@ h1{
 }
 
 
-
-/* @media screen and (max-width: 1366px) {} */
-
-/* @media screen and (max-width: 1280px) {
-    /* Laptop with MDPI screen 1280x800 */
-    /* El media query se ejecuta desde 0px HASTA 1280px */
-
-   /* 
-} */
 
 @media screen and (max-width: 1024px) {
 	/* iPad pro 1024x1366 41% */
