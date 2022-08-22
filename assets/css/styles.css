@@ -714,6 +714,76 @@ h1{
     }
 }
 
+@media screen and (max-width: 320px) {
+	/* iphone 5/SE 320x568 100% */
+	/* vivo v2 320x480 100% */
+
+    .image-bg{
+        height: 51vh;
+    }
+
+    .image-bg img{
+        height: 51vh;
+    }
+
+    .title-bar {
+        top: 7vw;
+    }
+
+    h1 {
+        font-size: 7vw;
+    }
+
+    .score-table{
+        top: 12vw;
+        font-size: 3vw;
+    }
+
+    .score-table-results p {
+        font-size: 4vw;
+    }
+
+    .gallow{
+        top: 5vw;
+        height: 40vw;
+    }
+
+    .gallow-wood-1{
+        height: 20vh;
+    }
+
+    .word{
+        top: 6vw;
+        font-size: 5vw;
+    }
+
+    .change-word {
+        top: -1vw;
+    }
+
+    .button {
+        font-size: 4vw;
+        padding: 5px 10px;
+    }
+
+    .btn-alphabet {
+        margin: 2px;
+    }
+
+    .alerts {
+        top: 75vw;
+        left: 8vw;
+    }
+
+    .alert {
+        font-size: 4vw;
+    }
+
+    .alphabet {
+        width: 74vw;
+    }
+}
+
 @media screen and (max-width: 280px) {
 	/* galaxy fold 280x653 87% */
 
@@ -722,12 +792,29 @@ h1{
         height: 50vh;
     }
 
+    .title-bar{
+        top: 8vw;
+    }
+
+    h1 {
+        font-size: 8vw;
+    }
+
     .score-table{
-        top: 31vw;
+        top: 26vw;
+        font-size: 4vw;
+    }
+
+    .score-table-results p {
+        font-size: 5vw;
     }
 
     .gallow{
-        top: 21vw;
+        top: 16vw;
+    }
+
+    .gallow-wood-1 {
+        height: 15vh;
     }
 
     .hangman {
@@ -790,6 +877,11 @@ h1{
         height: 11vw;
     }
 
+    .word {
+        top: 14vw;
+        font-size: 6vw;
+    }
+
     .change-word{
         top: 4vw;
         position: relative;
@@ -797,7 +889,8 @@ h1{
 
     /* ALERTAS */
     .alerts{
-        left: 2vw;
+        top: 100vw;
+        left: 7vw;
     }
 
     .alert{
