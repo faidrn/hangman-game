@@ -347,10 +347,6 @@ h1{
         object-fit: cover;
     }
 
-    /* .title-bar{
-        top: 5vw;
-    } */
-
     h1{
         font-size: 7vw;
     }
@@ -505,7 +501,7 @@ h1{
 
     /* ALERTAS */
     .alerts{
-        top: 55vw;
+        top: 58vw;
         left: 21vw;
     }
 
@@ -683,7 +679,7 @@ h1{
     /* ALERTAS */
     .alerts{
         top: 100vw;
-        left: 5vw;
+        left: 0vw;
     }
 
     .alert{
@@ -795,8 +791,8 @@ h1{
     }
 
     .alerts {
-        top: 62vw;
-        left: 7vw;
+        top: 64vw;
+        left: 9vw;
     }
 
     .alert {
@@ -805,7 +801,7 @@ h1{
     }
 
     .alphabet {
-        width: 89vw;
+        width: 72vw;
         top: -8vw;
     }
 
@@ -820,6 +816,112 @@ h1{
 
     .footer {
         margin-top: -7vw;
+    }
+}
+
+@media screen and (max-width: 414px){
+    /* iphone 6/7/8 plus 414x376 77%     */
+
+    h1 {
+        font-size: 9vw;
+    }
+
+    .score-table {
+        top: 25vw;
+        font-size: 4vw;
+    }
+
+    .score-table-results p {
+        font-size: 5vw;
+    }
+
+    .gallow {
+        height: 37vw;
+        top: 16vw;
+    }
+
+    .gallow-wood-1 {
+        height: 18vh;
+    }
+
+    .word {
+        top: 14vw;
+        font-size: 5vw;
+    }
+
+    .change-word {
+        top: 4vw;
+    }
+
+    .button {
+        font-size: 4vw;
+        padding: 7px 15px;
+    }
+
+    .alerts {
+        top: 85vw;
+        left: 4vw;
+    }
+
+    .alert {
+        font-size: 4.5vw;
+    }
+
+    .alphabet {
+        width: 85vw;
+    }
+
+    .btn-alphabet {
+        margin: 3px 4px;
+    }
+
+    .footer {
+        margin-top: -9vw;
+    }
+}
+
+@media screen and (max-width: 411px){
+    /* pixel 2xl 411x823 69%     */
+
+    h1 {
+        font-size: 10vw;
+    }
+
+    .score-table {
+        top: 28vw;
+    }
+    
+
+    .gallow {
+        height: 40vw;
+    }
+
+    .word {
+        top: 17vw;
+        font-size: 5.5vw;
+    }
+
+    .change-word {
+        top: 5vw;
+    }
+
+    .button {
+        font-size: 4.5vw;
+    }
+
+    .alerts {
+        top: 97vw;
+        left: 5vw;
+        font-size: 5vw;
+    }
+
+    .alphabet {
+        width: 88vw;
+    }
+
+    .footer {
+        margin-top: -10vw;
+        font-size: 4.3vw;
     }
 }
 
@@ -854,7 +956,7 @@ h1{
     }
 
     .word {
-        top: 12vw;
+        top: 17vw;
         font-size: 6vw;
     }
 
@@ -864,8 +966,8 @@ h1{
     }
 
     .alerts {
-        top: 90vw;
-        left: 0vw;
+        top: 97vw;
+        left: 3vw;
     }
 
     .alert{
@@ -873,6 +975,7 @@ h1{
     }
 
     .alphabet {
+        width: 79vw;
         top: -11vw;
     }
 
@@ -885,114 +988,8 @@ h1{
     }
 }
 
-@media screen and (max-width: 414px){
-    /* iphone 6/7/8 plus 414x376 77%     */
-    .title-bar{
-        top: 3vw;
-    }
-
-    h1 {
-        font-size: 9vw;
-    }
-
-    .score-table {
-        top: 21vw;
-        font-size: 4vw;
-    }
-
-    .score-table-results p {
-        font-size: 5vw;
-    }
-
-    .gallow {
-        height: 37vw;
-        top: 16vw;
-    }
-
-    .gallow-wood-1 {
-        height: 18vh;
-    }
-
-    .word {
-        top: 14vw;
-        font-size: 5vw;
-    }
-
-    .change-word {
-        top: 4vw;
-    }
-
-    .button {
-        font-size: 4vw;
-        padding: 7px 15px;
-    }
-
-    .alerts {
-        top: 85vw;
-    }
-
-    .alert {
-        font-size: 4.5vw;
-    }
-
-    .btn-alphabet {
-        margin: 3px 4px;
-    }
-
-    .footer {
-        margin-top: -9vw;
-    }
-}
-
-@media screen and (max-width: 411px){
-    /* pixel 2xl 411x823 69%     */
-    .title-bar {
-        top: 5vw;
-    }
-
-    h1 {
-        font-size: 10vw;
-    }
-
-    .score-table {
-        top: 25vw;
-    }
-    
-
-    .gallow {
-        height: 40vw;
-    }
-
-    .word {
-        top: 17vw;
-        font-size: 5.5vw;
-    }
-
-    .change-word {
-        top: 5vw;
-    }
-
-    .button {
-        font-size: 4.5vw;
-    }
-
-    .alerts {
-        top: 97vw;
-        left: 7vw;
-        font-size: 5vw;
-    }
-
-    .footer {
-        margin-top: -10vw;
-        font-size: 4.3vw;
-    }
-}
-
 @media screen and (max-width: 360px){
     /* galaxy s5 360x640 85%     */
-    .title-bar {
-        top: 3vw;
-    }
 
     h1 {
         font-size: 9vw;
@@ -1011,6 +1008,10 @@ h1{
         height: 37vw;
     }
 
+    .gallow-wood-1 {
+        height: 17vh;
+    }
+
     .word {
         top: 8vw;
     }
@@ -1024,8 +1025,13 @@ h1{
     }
 
     .alerts {
-        top: 78vw;
+        top: 80vw;
+        left: 3vw;
         font-size: 4.7vw;
+    }
+
+    .alphabet {
+        width: 85vw;
     }
 }
 
@@ -1033,17 +1039,10 @@ h1{
 	/* iphone 5/SE 320x568 100% */
 	/* vivo v2 320x480 100% */
 
-    .image-bg{
-        height: 51vh;
-    }
-
+    .image-bg,
     .image-bg img{
         height: 51vh;
     }
-
-    /* .title-bar {
-        top: 7vw;
-    } */
 
     h1 {
         font-size: 7vw;
@@ -1087,7 +1086,7 @@ h1{
 
     .alerts {
         top: 75vw;
-        left: 11vw;
+        left: 12vw;
     }
 
     .alert {
@@ -1105,10 +1104,6 @@ h1{
     .image-bg, 
     .image-bg img{
         height: 50vh;
-    }
-
-    .title-bar{
-        top: 4vw;
     }
 
     h1 {
@@ -1182,12 +1177,12 @@ h1{
     }
 
     .hangman-right-leg {
-        top: 14.4vw;
-        left: 0vw;
+        top: 14.3vw;
+        left: 0.3vw;
     }
 
     .hangman-left-leg {
-        top: 14.4vw;
+        top: 14.3vw;
         left: 5.4vw;
     }
 
@@ -1210,7 +1205,7 @@ h1{
     /* ALERTAS */
     .alerts{
         top: 100vw;
-        left: 2vw;
+        left: 3vw;
     }
 
     .alert{
