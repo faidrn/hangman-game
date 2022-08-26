@@ -325,7 +325,6 @@ h1{
 }
 
 
-
 @media screen and (max-width: 1024px) {
 	/* iPad pro 1024x1366 41% */
 
@@ -886,11 +885,149 @@ h1{
     }
 }
 
-/* galaxy s5 360x640 85%     */
-@media (min-width: 321px) {
-    /* El media query se ejecuta desde 411px HACIA arriba */
+@media screen and (max-width: 414px){
+    /* iphone 6/7/8 plus 414x376 77%     */
+    .title-bar{
+        top: 3vw;
+    }
+
+    h1 {
+        font-size: 9vw;
+    }
+
+    .score-table {
+        top: 21vw;
+        font-size: 4vw;
+    }
+
+    .score-table-results p {
+        font-size: 5vw;
+    }
+
+    .gallow {
+        height: 37vw;
+        top: 16vw;
+    }
+
+    .gallow-wood-1 {
+        height: 18vh;
+    }
+
+    .word {
+        top: 14vw;
+        font-size: 5vw;
+    }
+
+    .change-word {
+        top: 4vw;
+    }
+
+    .button {
+        font-size: 4vw;
+        padding: 7px 15px;
+    }
+
+    .alerts {
+        top: 85vw;
+    }
+
+    .alert {
+        font-size: 4.5vw;
+    }
+
+    .btn-alphabet {
+        margin: 3px 4px;
+    }
+
+    .footer {
+        margin-top: -9vw;
+    }
 }
 
+@media screen and (max-width: 411px){
+    /* pixel 2xl 411x823 69%     */
+    .title-bar {
+        top: 5vw;
+    }
+
+    h1 {
+        font-size: 10vw;
+    }
+
+    .score-table {
+        top: 25vw;
+    }
+    
+
+    .gallow {
+        height: 40vw;
+    }
+
+    .word {
+        top: 17vw;
+        font-size: 5.5vw;
+    }
+
+    .change-word {
+        top: 5vw;
+    }
+
+    .button {
+        font-size: 4.5vw;
+    }
+
+    .alerts {
+        top: 97vw;
+        left: 7vw;
+        font-size: 5vw;
+    }
+
+    .footer {
+        margin-top: -10vw;
+        font-size: 4.3vw;
+    }
+}
+
+@media screen and (max-width: 360px){
+    /* galaxy s5 360x640 85%     */
+    .title-bar {
+        top: 3vw;
+    }
+
+    h1 {
+        font-size: 9vw;
+    }
+
+    .score-table {
+        top: 24vw;
+        font-size: 3.7vw;
+    }
+
+    .score-table-results p {
+        font-size: 4.6vw;
+    }
+
+    .gallow {
+        height: 37vw;
+    }
+
+    .word {
+        top: 8vw;
+    }
+
+    .change-word {
+        top: 0vw;
+    }
+
+    .button {
+        padding: 6px 13px;
+    }
+
+    .alerts {
+        top: 78vw;
+        font-size: 4.7vw;
+    }
+}
 
 @media screen and (max-width: 320px) {
 	/* iphone 5/SE 320x568 100% */
@@ -950,7 +1087,7 @@ h1{
 
     .alerts {
         top: 75vw;
-        left: 9vw;
+        left: 11vw;
     }
 
     .alert {
@@ -1073,7 +1210,7 @@ h1{
     /* ALERTAS */
     .alerts{
         top: 100vw;
-        left: 0vw;
+        left: 2vw;
     }
 
     .alert{
@@ -1100,185 +1237,3 @@ h1{
         margin-top: -11vw;
     }
 }
-
-
-
-/* iphone 6/7/8 plus 414x376 77%     */
-/* pixel 2xl 411x823 69%     */
-/*@media (min-width: 411px) {
-    /* @media (min-width: 411px) { */
-    /* El media query se ejecuta desde 411px HACIA arriba */
-    /*.image-bg, 
-    .image-bg img{
-        height: 54vh;
-    }
-
-    h1 {
-        font-size: 10vw;
-    }
-
-    .score-table {
-        top: 29vw;
-        font-size: 3.5vw;
-    }
-
-    .score-table-results p {
-        font-size: 4vw;
-    }
-
-    .gallow {
-        height: 22vh;
-        top: 22vw;
-    }
-
-    .gallow-wood-1 {
-        height: 19vh;
-    }
-
-    .word {
-        top: 15vw;
-        font-size: 5vw;
-    }
-
-    .change-word {
-        top: 4vw;
-    }
-
-    .button {
-        font-size: 4.5vw;
-        padding: 7px 13px;
-    }
-
-    .alerts {
-        top: 83vw;
-        left: 4vw;
-    }
-
-    .alert {
-        font-size: 4.5vw;
-        padding: 12px;
-    }
-
-    .alphabet{
-        top: -7vw;
-    }
-
-    .btn-alphabet {
-        margin: 5px 3px;
-    }
-
-    .footer {
-        margin-top: -9vw;
-    }
-}
-
-@media screen and (min-width: 540px){
-    /* @media screen and (max-width: 540px){ */
-    /* surface duo 540x720 75% */
-
-    /* .title-bar {
-        top: 3vw;
-    } */
-
-  /*  h1 {
-        font-size: 7vw;
-    }
-
-    .score-table {
-        top: 12vw;
-        font-size: 3vw;
-    }
-
-    .score-table-results p {
-        font-size: 4vw;
-    }
-
-    .gallow{
-        height: 35vw;
-        top: 8vw;
-    }
-
-    .gallow-base {
-        height: 2vh;
-    }
-
-    .gallow-wood-1{
-        height: 22vh;
-        bottom: 2.1vh;
-    }
-
-    .string{
-        left: 20vw;
-    }
-
-    .string img {
-        height: 11vw;
-    }
-
-    .hangman-head{
-        top: -3vw;
-        left: 5.2vw;
-    }
-
-    .hangman-body {
-        top: 1.5vw;
-        left: 3.1vw;
-    }
-
-    .hangman-right-arm {
-        top: 3vw;
-        left: -0.7vw;
-    }
-
-    .hangman-left-arm {
-        top: 1.4vw;
-        left: 7.9vw;
-    }
-
-    .hangman-right-leg {
-        top: 10.5vw;
-        left: 0.1vw;
-    }
-
-    .hangman-left-leg {
-        top: 10.5vw;
-        left: 5.4vw;
-    }
-
-    .word{
-        top: 6vw;
-        font-size: 4.5vw;
-    }
-
-    .change-word{
-        top: -1vw;
-    }
-
-    .alerts {
-        top: 62vw;
-        left: 7vw;
-    }
-
-    .alert {
-        font-size: 4vw;
-        padding: 9px;
-    }
-
-    .alphabet {
-        width: 89vw;
-        top: -8vw;
-    }
-
-    .button {
-        font-size: 3vw;
-        padding: 7px 17px;
-    }
-
-    .btn-alphabet {
-        margin: 4px;
-    }
-
-    .footer {
-        margin-top: -7vw;
-    }
-}*/
